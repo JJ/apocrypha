@@ -53,12 +53,59 @@
 
 	  <section><h1>One of many <strong>braids</strong></h1>
 
-	    <aside class='fragment'>A brief writeup <a href='https://mouq.github.io/slangs.html'>here, by Alexander Moquin</a></aside>
+	    <aside class='notes'>A brief writeup <a href='https://mouq.github.io/slangs.html'>here, by Alexander Moquin</a></aside>
 	  </section>
-	  
+
+	  <section data-background='https://live.staticflickr.com/65535/48431949907_c415a9c8b2_o_d.jpg'>
+	    <h1>Perl 6 parses comments.</h1>
+	    <h1 class='fragment'>Let's call it POM</h1>
+	  </section>
 	</section>
 	
 	<!-- Intro to pod 6 -->
+	<section>
+	  <section><h1>This is Pod6</h1>
+	    <pre><code>=begin pod
+This ordinary paragraph introduces a code block:
+
+    $this = 1 * code('block');
+    $which.is_specified(:by&lt;indenting>);
+=end pod
+	    </code></pre>
+	  </section>
+
+	  <section><h1>This, too</h1>
+	    <pre><code>=head3 X&lt;C&lt;string literal>>
+C<'scores.txt'> is a I&t;string literal>.
+
+=begin code :preamble&lt;my $file>
+my @names = $file.get.words;
+=end code
+	    </code></pre>
+	    <h2 class='fragment'>Code is also doc</h2>
+
+	    <aside class='notes'>This can cause all kinds of problems, since you can't easily separate code from doc-e.</aside>
+
+	  </section>
+	</section>
+
+	<section>
+	  <section><h1>In the beginning, there was code</h1>
+	    <aside class='notes'>Why is Perl 6 not documented by the same people who write the Rakudo compiler</aside>
+	  </section>
+
+	  <section><h2>S26 implemented...</h2>
+	    <h1 class='fragment'><strong>January 2012</strong> by <code>tadzik</code></h1>
+	  </section>
+
+	  <section><h1>A few months later...</h1>
+	    <img src='img/commits.png' alt='Initial commits'>
+	  </section>
+
+	  <section><h3>FAQ: Why don't doc inline in Rakudo?</h3>
+	    <h1>It's <strong>too slow</strong></h1>
+	  </section>
+	</section>
 	
       </div>
     </div>
