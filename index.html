@@ -87,6 +87,19 @@ my @names = $file.get.words;
 	    <aside class='notes'>This can cause all kinds of problems, since you can't easily separate code from doc-e.</aside>
 
 	  </section>
+
+	  <section><h1>Docs from code</h1>
+<pre><code>=begin pod
+This is I&lt;apocrypha>
+=head1 Lesson 1
+Doc is code
+=end pod
+say $=pod[0].perl;
+=output
+Pod::Block::Named.new(name => "pod", config => {}, contents => [Pod::Block::Para.new(config => {}, contents => ["This is ", Pod::FormattingCode.new(type => "I", meta => [], config => {}, contents => ["apocrypha"])]), Pod::Heading.new(level => 1, config => {}, contents => [Pod::Block::Para.new(config => {}, contents => ["Lesson 1"])]), Pod::Block::Para.new(config => {}, contents => ["Doc is code"])])
+</code></pre>
+	  </section>
+	  
 	</section>
 
 	<section>
@@ -103,7 +116,8 @@ my @names = $file.get.words;
 	  </section>
 
 	  <section><h3>FAQ: Why don't doc inline in Rakudo?</h3>
-	    <h1>It's <strong>too slow</strong></h1>
+	    <h1 class='fragment'>It's <strong>too slow</strong></h1>
+	    <aside class='notes'>Since docs are code, that code will also take some (or a lot) of time to compile, slowing down the whole operation</aside>
 	  </section>
 
 	  <section data-background='https://live.staticflickr.com/4304/35578237540_5bc53058f4_k_d.jpg'>
