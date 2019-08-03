@@ -4,5 +4,4 @@ use v6;
 
 use Pod::To::Cached;
 
-my Pod::To::Cached $cache .= new(:path<.>,
-        :source<../pods>);
+my Pod::To::Cached $cache .= new(:source<../pods>);
