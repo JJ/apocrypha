@@ -1,0 +1,14 @@
+=begin pod
+
+=TITLE class Foo
+
+=SUBTITLE Generic class
+
+    class Foo {}
+
+Foo is the class you use when you are talking about a generic class.
+
+=for code
+my Foo $foo .=new
+
+=end pod

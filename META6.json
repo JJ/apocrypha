@@ -1,15 +1,18 @@
 {
-    "authors" : [
-	"JJ Merelo"
-    ],
-    "description" : "Minimal META6 for Apocrypha examples",
-    "license" : "Artistic-2.0",
-    "name" : "Apocrypha examples",
-    "perl" : "6.d",
-    "provides" : { },
-    "tags" : [
-	"book"
-    ],
-    "depends" : [ "Pod::To::Cached" ],
-    "version" : "0.0.1"
+  "name": "Apocrypha examples",
+  "description": "Minimal META6 for Apocrypha examples",
+  "version": "0.0.1",
+  "perl": "6.d",
+  "authors": [
+    "JJ Merelo"
+  ],
+  "auth": "github:JJ",
+  "depends": [
+    "Pod::To::Cached"
+  ],
+  "provides": {},
+  "license": "Artistic-2.0",
+  "tags": [
+    "book"
+  ]
 }
