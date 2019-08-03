@@ -1,0 +1,15 @@
+=begin pod :tag<perl6>
+
+=TITLE Using Foo
+
+=SUBTITLE When to use Foo, and when to use Bar
+
+C<Foo> always goes before C<Bar>. This is called the I<fubar> sorting order,
+which is just like lexicographical ordering, only not.
+
+=begin code
+class Foo { has $.foo }
+class Bar { has $!bar }
+=end code
+
+=end pod
