@@ -196,7 +196,17 @@ Pod::Block::Named.new(name => "pod", config => {}, contents => [Pod::Block::Para
 	    <h1 class='fragment'>Joel → <code>p6doc++</code></h1>
 	  </section>
 
-	  <section>New stuff</section>
+	  <section><h2>Richard Hainsworth's Pod::To::Cached</h2>
+	    <pre><code>my Pod::To::Cached $cache .= new(:source&lt;../pods>);
+$cache.update-cache;
+for $cache.hash-files.kv -> $source-name, $status {
+    say "$source-name is $status";
+    say $cache.pod($source-name);
+}
+	    </code></pre>
+	    <h2 class='fragment'>Compile only once</h2>
+	    <aside class='notes'>Effectively precompiles and caches documents. This is actually previous to GSoC, but it's been during GSoC when we have it production ready.</aside>
+	  </section>
 	</section>
 
 
