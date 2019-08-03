@@ -23,6 +23,7 @@
       document.getElementsByTagName( 'head' )[0].appendChild( link );
     </script>
   </head>
+  
   <body>
     <div class="reveal">
       <div class="slides">
@@ -207,10 +208,40 @@ for $cache.hash-files.kv -> $source-name, $status {
 	    <h2 class='fragment'>Compile only once</h2>
 	    <aside class='notes'>Effectively precompiles and caches documents. This is actually previous to GSoC, but it's been during GSoC when we have it production ready. Also example of cached, thus hidden, thus apocrypha! </aside>
 	  </section>
+
+	  <section><h1><code>Documentable</code> registry</h1>
+	    <pre><code> my $registry = Perl6::Documentable::Registry.new( :$cache, :$topdir,
+            :dirs(["Language", "Type", "Programs", "Native"]),  :verbose($v)
+        );  </code></pre>
+
+	    <pre class='fragment'><code># Perl6::Documentable::Registry BUILD →
+$!pod-cache = Pod::To::Cached.new( source => $!topdir,  :$!verbose,
+              path   => "." ~ $!topdir );
+	  </code></pre>
 	</section>
 
+	<section><h1>Builds up to <code>p6doc</code></h1>
+	  <pre><code>sub process-type-pod-files(IO::Path @files,
+    --> Array[Perl6::Documentable]
+) is export {
+    my Perl6::Documentable @results;
+    for @files.list -> $f {
+        my $documentable = Perl6::Documentable::File.new(
+          dir => "Type", filename => $f.basename.Str,
+          tg => Perl6::TypeGraph.new-from-file,
+          pod => load($f).first );
+        $documentable.process();
+        @results.push($documentable);
+    }
+    @results
+}</code></pre>	</section>
 
-      </div>
+<section data-background='https://live.staticflickr.com/42/92099627_e313120fc8_b_d.jpg'><h2>The new Perl 6 doc stack</h2>
+  <h1 class='fragment'><code>Pod::To::Cached ≜ Perl6::Documentable ≜ P6doc</code></h1>
+</section>
+<section>
+  
+</div>
     </div>
 
     <script src="js/reveal.js"></script>
