@@ -187,6 +187,7 @@ Pod::Block::Named.new(name => "pod", config => {}, contents => [Pod::Block::Para
 	    <h2 class='fragment'>Mojolicious for server</h2>
 	    <h2 class='fragment'>No roadmap</h2>
 	    <h2 class='fragment'>No release policy</h2>
+	    <aside class='notes'>In general, it kind of happens, is there, with no clear direction or deadlines or, for that matter, person leading it somewhere.</aside>
 	  </section>
 
 	  <section><img src='img/doc-survey-18.png'  style='height:300px' alt='Survey 2018'>
@@ -260,8 +261,38 @@ $!pod-cache = Pod::To::Cached.new( source => $!topdir,  :$!verbose,
 <section>
   <section data-background='https://live.staticflickr.com/1884/42507218820_72e2712459_k_d.jpg'>
     <h1>Future</h1>
+    <h2 class='fragment'>Maybe a wishlist</h2>
+    <aside class='notes'>"It's difficult to make predictions, over all if they are about the future"</aside>
   </section>
+
+  <section>
+    <h1>Finish S26 implementation</h1>
+    <h2 class='fragment'>Indexing</h2>
+    <h2 class='fragment'><code>P</code> includes</h2>
+    <aside class='notes'>The problem is that it needs someone with time enough to do it. Maybe next Summer of Code, or a specific Perl Grant.</aside>
+  </section>
+
+  <section><h1>Pod6 grammar</h1>
+    <h2 class='fragment'>Deployable to GitHub</h2>
+    <aside class='notes'>This grammar could be based on Jeff Goff's Perl6::Grammar, or maybe in a specific braid implementation. Without static interpretation of contents, any deployment of Pod6 to third parties is going to be dangerous.</aside>
+  </section>
+  
+  <section>
+    <h1>Decoupling of documentation and tooling</h1>
+    <aside class='notes'>In principle, doc tools should be used for any kind of big-ass docs modules, like Cro or zef (zef is using pod and will be using it for the foreseeable future, so here's hoping it will do otherwise)</aside>
+  </section>
+
+  <section><h1>Wishlist: dynamic site using Cro?</h1>
+    <h2>Multiple deployment options</h2>
+  </section>
+
+  <section><h1>More systematic revision</h1>
+    <aside class='notes'>Periodically check definitions against source. Revise old copy. Tighter coupling with devs (maybe)</aside>
+  </section>
+
 </section>
+
+  <section><h1>Let's shoot for A-</h1> </section>
 </div>
     </div>
 
