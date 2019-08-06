@@ -199,7 +199,8 @@ Pod::Block::Named.new(name => "pod", config => {}, contents => [Pod::Block::Para
 	  </section>
 	  
 
-	  <section><h1>Also</h1>
+	  <section data-background='https://live.staticflickr.com/65535/48474596446_bfef510a32_k_d.jpg'>
+	    <h1>Also</h1>
 	    <h2 class='fragment'>Mojolicious for server</h2>
 	    <h2 class='fragment'>No roadmap</h2>
 	    <h2 class='fragment'>No release policy</h2>
@@ -273,7 +274,24 @@ $!pod-cache = Pod::To::Cached.new( source => $!topdir,  :$!verbose,
   <h1 class='fragment'><code>Pod::To::Cached ≜ Perl6::Documentable ≜ P6doc</code></h1>
 </section>
 
-<section><h1>Documenting now</h1>
+<section data-background='https://live.staticflickr.com/65535/48474163701_9d581637be_k_d.jpg'>
+  <h1>Documenting now</h1>
+  <pre><code>=begin pod :kind("Type") :subkind("class") :category("generic")
+=TITLE class Foo
+=SUBTITLE Generic class
+
+    class Foo {}
+
+Foo is the class you use when you are talking about a generic class.
+
+=for code
+my Foo $foo .=new
+
+=end pod</code></pre>
+  <aside class='notes'>This is the plaque conmemorating Ángel Ganivet; I took a picture yesterday. The house where he lived (literally quite shortly) is being renovated. Everything needs to get updated and changed from time to time, and inlining metadata in documents is probable A Good Thing. We could have, for instance, version specific content.</aside>
+</section>
+
+<section><h1>Processing the documentation</h1>
   <pre><code>use Perl6::Documentable::Registry;
 my $top-dir = "resources/pods/";
 my $registry = Perl6::Documentable::Registry.new(
@@ -283,9 +301,10 @@ my $registry = Perl6::Documentable::Registry.new(
         use-cache => True                  # recommended
       );
 $registry.compose;
-say $registry.lookup("Type",:by<kind>);
+say $registry.lookup("Type",:by&lt;kind>);
   </code></pre>
-  <aside class='notes'>This is working now, although it's got its quirks; for instance, you can't look up individual objects, just look up by kind. Also, this does not really work on my example files.</aside>
+  <aside class='notes'>This is working now.</aside>
+</section>
 </section>
 
 <section>
@@ -298,7 +317,10 @@ say $registry.lookup("Type",:by<kind>);
   <section data-background='https://live.staticflickr.com/1847/42910394150_9fba8991af_k_d.jpg'><h1>Deploy Antonio's and Joel's improvements</h1>
   </section>
 
-  <section><h1>Properly working <code>p6doc</code></h1></section>
+  <section>
+    <h1>Properly working <code>p6doc</code></h1>
+  </section>
+  
   <section data-background='https://live.staticflickr.com/4139/4863653122_2de10e536f_b_d.jpg'><h1>All new Perl6::Documentable</h1>
     <h2 class='fragment'>Multi-class document support.</h2>
   </section>
@@ -330,7 +352,8 @@ say $registry.lookup("Type",:by<kind>);
 
 </section>
 
-  <section><h1>Let's shoot for A-</h1> </section>
+<section data-background='https://live.staticflickr.com/65535/48312790766_331301f3cc_k_d.jpg'>
+  <h1>Let's shoot for A-</h1> </section>
 </div>
     </div>
 
