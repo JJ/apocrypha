@@ -4,7 +4,8 @@ use v6;
 
 use Perl6::Documentable::Registry;
 
-my $top-dir = $*CWD ~~ /resources/ ?? "../pods" !! $*CWD ~ "/resources/pods/";
+# Run from top dir
+my $top-dir = "resources/pods";
 
 my $registry = Perl6::Documentable::Registry.new(
         topdir    => $top-dir,             # doc containing the pod collection
@@ -15,3 +16,4 @@ my $registry = Perl6::Documentable::Registry.new(
 
 $registry.compose;
 say $registry.lookup("Type",:by<kind>);
+say $registry.documentables.grep({.name eq "Foo"})[0];
