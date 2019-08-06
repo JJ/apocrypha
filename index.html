@@ -272,6 +272,20 @@ $!pod-cache = Pod::To::Cached.new( source => $!topdir,  :$!verbose,
 <section data-background='https://live.staticflickr.com/42/92099627_e313120fc8_b_d.jpg'><h2>The new Perl 6 doc stack</h2>
   <h1 class='fragment'><code>Pod::To::Cached ≜ Perl6::Documentable ≜ P6doc</code></h1>
 </section>
+
+<section><h1>Documenting now</h1>
+  <pre><code>use Perl6::Documentable::Registry;
+my $top-dir = "resources/pods/";
+my $registry = Perl6::Documentable::Registry.new(
+        topdir    => $top-dir,             # doc containing the pod collection
+        dirs      => ["Type", "Language"], # dirs to process
+        verbose   => True,
+        use-cache => True                  # recommended
+      );
+$registry.compose;
+say $registry.lookup("Type",:by<kind>);
+  </code></pre>
+  <aside class='notes'>This is working now, although it's got its quirks; for instance, you can't look up individual objects, just look up by kind. Also, this does not really work on my example files.</aside>
 </section>
 
 <section>
