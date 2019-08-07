@@ -36,9 +36,12 @@
 	<section><h1>Apocrypha</h1>
 	  <h2 class='fragment'>Hidden, or</h2>
 	  <h2 class='fragment'>of doubtful origin</h2>
+	  <aside class='notes'>This is kind of a multiple-choice question on Perl 6 documentation. Is it hidden? Is it of doubtful origin? Probably both.</aside>
 	</section>
 
-	<section><h1>Apocalypses, exegeses, synopses</h1>
+	<section data-background='https://live.staticflickr.com/5346/31059606706_9167f022a0_h_d.jpg'>
+	  <h1>Apocalypses, exegeses, synopses</h1>
+	  <aside class='notes'>This graffiti crew in Granada is called The Horsemen of the Apocalypse, this mural was created for their 20th aniversary. But the thing is that we have all these names for Perl 6 documents. So we could as well talk about Apocrypha when we talk about documentation.</aside>
 	</section>
 
 	<section> <!-- specs -->
@@ -53,7 +56,8 @@
 	    <aside class='notes'>This distinguishes Perl 6 (yet again) from other languages, that generally consider comments (and included documentation) off limits, and to be processed externally by some document-generation tool</aside>
 	  </section>
 
-	  <section><h1>One of many <strong>braids</strong></h1>
+	  <section data-background='https://live.staticflickr.com/5346/31059606706_9167f022a0_h_d.jpg'>
+	    <h1>One of many <strong>braids</strong></h1>
 
 	    <aside class='notes'>A brief writeup <a href='https://mouq.github.io/slangs.html'>here, by Alexander Moquin</a></aside>
 	  </section>
@@ -61,6 +65,7 @@
 	  <section data-background='https://live.staticflickr.com/65535/48431949907_c415a9c8b2_o_d.jpg'>
 	    <h1>Perl 6 parses comments.</h1>
 	    <h1 class='fragment'>Let's call it POM</h1>
+	    <aside class='notes'>It's the Perl 6 object model, a tree-like, AST, representation of comments.</aside>
 	  </section>
 	</section>
 	
@@ -84,8 +89,8 @@ C<'scores.txt'> is a I&t;string literal>.
 my @names = $file.get.words;
 =end code
 	    </code></pre>
+	    
 	    <h2 class='fragment'>Code is also doc</h2>
-
 	    <aside class='notes'>This can cause all kinds of problems, since you can't easily separate code from doc-e.</aside>
 
 	  </section>
@@ -106,7 +111,7 @@ Pod::Block::Named.new(name => "pod", config => {}, contents => [Pod::Block::Para
 
 	<section>
 	  <section><h1>In the beginning, there was code</h1>
-	    <aside class='notes'>Why is Perl 6 not documented by the same people who write the Rakudo compiler</aside>
+	    <aside class='notes'>Let's jump to history. In the beginning, documentation was hidden or non-existent. Why is Perl 6 not documented by the same people who write the Rakudo compiler. Documentation and code were decoupled.</aside>
 	  </section>
 
 	  <section data-background='img/placa-ganivet.jpg'>
@@ -115,22 +120,25 @@ Pod::Block::Named.new(name => "pod", config => {}, contents => [Pod::Block::Para
 	    <p>Picture: M.Strīķis [<a href="https://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a>], <a href="https://commons.wikimedia.org/wiki/File:Sp%C4%81%C5%86u_rakstnieka_Angel_Ganivet_piemi%C5%86as_z%C4%ABme,_R%C4%ABga,_Latvia_-_panoramio.jpg">via Wikimedia Commons</a></p>
 	  </section>
 
-	  <section><h2>We need the right amount of documentation along with code</h2>
+	  <section>
+	    <h2>We need the right amount of documentation along with code</h2>
 	    <aside class='notes'>Ángel Ganivet died right here after taking his own life by diving into the Daugava. Twice, after he tried once and was rescued.</aside>
 	  </section>
 
 	  <section><h2>S26 implemented...</h2>
 	    <h1 class='fragment'><strong>January 2012</strong> by <code>tadzik</code></h1>
 	    <h2 class='fragment'>Mainly in NQP</h2>
+	    <aside class='notes'>That was an initial implementation, not a complete one.</aside>
 	  </section>
 
 	  <section><h1>A few months later...</h1>
 	    <img src='img/commits.png' alt='Initial commits'>
+	    <aside class='notes'>Of course, you couldn't do documentation until it was physically possible to parse it. How anything was done before that, beats me.</aside>
 	  </section>
 
 	  <section><h3>FAQ: Why don't doc inline in Rakudo?</h3>
 	    <h1 class='fragment'>It's <strong>too slow</strong></h1>
-	    <aside class='notes'>Since docs are code, that code will also take some (or a lot) of time to compile, slowing down the whole operation</aside>
+	    <aside class='notes'>Once documentation could be interpreted, why was it not included in the code? Since docs are code, that code will also take some (or a lot) of time to compile, slowing down the whole operation</aside>
 	  </section>
 
 	  <section data-background='img/ganivet-foto.jpg'>
